@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>City Lights!</title>
+        <script src="javascript/imported/gl-matrix-min.js"></script>
+        <script src="javascript/logistics/camera.js"></script>
+        <script src="javascript/control/program.js"></script>
+        <script src="javascript/logistics/background.js"></script>
+        <script src="javascript/logistics/particles.js"></script>
+        <script src="javascript/logistics/fireworks.js"></script>
+        <script src="shaders/particles.js"></script>
+        <script src="shaders/background.js"></script>
+        <script src="javascript/logistics/musicplayer.js"></script>
+        <script src="javascript/control/render.js"></script>
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body bgcolor="#E6E6FA">
+        <div id="musicplayer">
+            <input type="radio" checked="checked" name="mode" value="playlist" id="mode-playlist" />
+            <label for="mode-playlist">Playlist</label>
+            <input type="radio" name="mode" value="file" id="mode-file" />
+            <label for="mode-file">Local Music</label>
+            <input type="radio" name="mode" value="volume" id="mode-volume" />
+            <label for="mode-volume">Volume</label>
+            <form id="playlist">
+                <button id="prev" class="btn-style" >&#9668;</button>
+                <span id="current"></span>
+                /
+                <span id="total"></span>
+                <button id="next" class="btn-style" >&#9658;</button>
+                <button id="pauseP" class="btn-style" >Play/Pause</button>
+            </form>
+            <form id="file">
+                <input type="file" class="btn-style"  />
+                <button id="pauseC" class="btn-style" >Play/Pause</button>
+            </form>
+            <form id="volume">
+                <input id = "slider" type="range" min="0" max="100" value="50">
+                <button id ="pauseV" class="btn-style" >Play/Pause</button>
+            </form>
+        </div>
+        <div id="song"></div>
+    </body>
+</html>
