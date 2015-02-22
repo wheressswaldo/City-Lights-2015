@@ -31,9 +31,9 @@ var MusicPlayer = {
     
     // default playlist setup
     playlist: [
-        {name:"Benny Benassi &ndash; Satisfaction", file:"1.mp3"},
+	{name:"Mark Ronson &ndash; Uptown Funk", file:"1.mp3"},
 	{name:"Sam Smith &ndash; Lay Me Down", file:"2.mp3"},
-	{name:"Mark Ronson &ndash; Uptown Funk", file:"3.mp3"},
+        {name:"Benny Benassi &ndash; Satisfaction", file:"3.mp3"},
 	{name:"Beyonce &ndash; Halo", file:"4.mp3"},
 	{name:"Caravan Palace &ndash; Rock It For Me", file:"5.ogg"},
         {name:"Jay-Z &ndash; Empire State of Mind", file:"6.mp3"},

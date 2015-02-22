@@ -24,19 +24,19 @@ var Fireworks = function(gl, force, delta) {
     
     // set lifetime according to delta
     if (delta > 10 && delta <30){
-        this.lifetime = 600;
+        this.lifetime = 700;
     }
     if (delta > 30 && delta <50){
-        this.lifetime = 800;
+        this.lifetime = 900;
     }
     if (delta > 50 && delta < 70){
-        this.lifetime = 1000;
+        this.lifetime = 1100;
     }
     if (delta > 70 && delta <100){
-        this.lifetime = 1200;
+        this.lifetime = 1300;
     }
     if (delta > 100){
-        this.lifetime = 1750;
+        this.lifetime = 1800;
     }
     // set position
     this.position = mat4.create();

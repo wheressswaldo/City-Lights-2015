@@ -38,17 +38,17 @@ Particles.prototype.build = function(type, force, amount) {
     //this.count = Math.round((type == "sphere" ? 1000 : 200) * (amount || 1));
     //console.log(amount);
     if (amount > 10 && amount <50){
-        this.count = amount * 2;
+        this.count = 150;
     }
     if (amount > 50 && amount < 100){
-        this.count = amount * 5;
+        this.count = 350;
     }
     if (amount > 100){
-        this.count = amount * 10;
+        this.count = 900;
     }
     
     if (type === "circle"){
-        this.count = Math.round(this.count * 0.75);
+        this.count = Math.round(this.count * 0.65);
     }
     
     var tmp3 = vec3.create();
