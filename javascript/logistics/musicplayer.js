@@ -130,7 +130,7 @@ var MusicPlayer = {
 
         // updates used for time management and synchro
         this.update = this.update.bind(this);
-	setInterval(this.update, 30);
+	setInterval(this.update, 20);
     },
 
     // setupEvents basically adds event listeners to all the interactive components
@@ -237,7 +237,7 @@ var MusicPlayer = {
         
         // control fireworks using delta (difference in byte frequency)
         // this need to be HEAVILY adjusted
-        if (delta > 10) {
+        if (delta > 15) {
             this.last.ts = now;
             var force = delta / 50;
             Render.scene.push(new Fireworks(Render.gl, force, delta));

@@ -28,6 +28,7 @@ Background.prototype.load = function() {
 };
 
 // prototype function to draw the background
+// ... i probably did a lot of things wrong in this function but whatever it works
 Background.prototype.render = function(program, canvas) {
     // setup
     var gl = this.gl;
@@ -89,5 +90,7 @@ Background.prototype.render = function(program, canvas) {
 
     // Draw the rectangle.
     gl.drawArrays(gl.TRIANGLES, 0, 6);
+    
+    
     
 };
