@@ -28,24 +28,19 @@ and open the template in the editor.
             <label for="mode-playlist">Playlist</label>
             <input type="radio" name="mode" value="file" id="mode-file" />
             <label for="mode-file">Local Music</label>
-            <input type="radio" name="mode" value="volume" id="mode-volume" />
-            <label for="mode-volume">Volume</label>
             <form id="playlist">
                 <button id="prev" class="btn-style" >&#9668;</button>
                 <span id="current"></span>
                 /
                 <span id="total"></span>
                 <button id="next" class="btn-style" >&#9658;</button>
-                <button id="pauseP" class="btn-style" >Play/Pause</button>
             </form>
             <form id="file">
                 <input type="file" class="btn-style"  />
-                <button id="pauseC" class="btn-style" >Play/Pause</button>
             </form>
-            <form id="volume">
-                <input id = "slider" type="range" min="0" max="100" value="50">
-                <button id ="pauseV" class="btn-style" >Play/Pause</button>
-            </form>
+            <input id = "slider" type="range" min="0" max="100" value="50">
+            <br>
+            <button id ="pause" class="btn-style">Play/Pause</button>
         </div>
         <div id="song"></div>
     </body>

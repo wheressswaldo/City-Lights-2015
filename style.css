@@ -54,9 +54,6 @@ canvas {
 #musicplayer [value=file]:checked ~ #file {
     display: block;
 }
-#musicplayer [value=volume]:checked ~ #volume {
-    display: block;
-}
 
 #musicplayer :checked + label {
     font-weight: bold;
@@ -75,6 +72,13 @@ canvas {
     bottom: 0px;
     color: white;
     text-align: center;
+    margin-top: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+#pause{
     margin-top: 8px;
     margin-left: 8px;
     margin-right: 8px;

@@ -144,9 +144,7 @@ var MusicPlayer = {
                 
         document.querySelector("#musicplayer #prev").addEventListener("click", this);
 	document.querySelector("#musicplayer #next").addEventListener("click", this);
-        document.querySelector("#musicplayer #pauseP").addEventListener("click", this);
-        document.querySelector("#musicplayer #pauseC").addEventListener("click", this);
-        document.querySelector("#musicplayer #pauseV").addEventListener("click", this);
+        document.querySelector("#musicplayer #pause").addEventListener("click", this);
         document.querySelector("#musicplayer #file input").addEventListener("change", this);
 	document.querySelector("#musicplayer #total").innerHTML = this.playlist.length;
     
@@ -212,7 +210,7 @@ var MusicPlayer = {
     update: function() {
         // control the slider
         // it should PROBABLY be it's own action listener rather than shoved into an update function...
-        var sliderVolume = document.querySelector("#musicplayer #volume input").value/100;
+        var sliderVolume = document.querySelector("#slider").value/100;
         if (sliderVolume != this.currentVolume){
             this.audio.volume = sliderVolume;
             this.currentVolume = sliderVolume;
