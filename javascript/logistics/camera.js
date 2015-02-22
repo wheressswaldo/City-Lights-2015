@@ -21,14 +21,14 @@ var Camera = function(options) {
 	aspect: 1,
 	near: 0.1,
 	far: 3000
-    }
+    };
     // set up two matrices for perspective and view
     this.pMatrix = mat4.create();
     this.vMatrix = mat4.create();
     
     // configure options given
     this.configure(options);
-}
+};
 
 // protype function to configure the options
 Camera.prototype.configure = function(options) {
@@ -38,13 +38,13 @@ Camera.prototype.configure = function(options) {
     }
     // set perspective
     mat4.perspective(this.pMatrix, this.options.fov, this.options.aspect, this.options.near, this.options.far);
-}
+};
 
 // prototype function to look at (change) camera view
 Camera.prototype.lookAt = function(eye, center, up) {
     // simple mat4 function using givens
     mat4.lookAt(this.vMatrix, eye, center, up);
-}
+};
 
 // change where you're looking FROM, aka where the camera is, so the camera can be simply rotated
 Camera.prototype.lookFrom = function(eye, rotX, rotY, rotZ) {
@@ -61,12 +61,12 @@ Camera.prototype.lookFrom = function(eye, rotX, rotY, rotZ) {
         
     // apply translation
     mat4.translate(this.vMatrix, this.vMatrix, translation);
-}
+};
 
 // helper function to sync camera when the window is resized
 Camera.prototype.syncPort = function(node) {
     // set up according to node
     this.configure({aspect: node.width/node.height});
     return this;
-}
+};
 

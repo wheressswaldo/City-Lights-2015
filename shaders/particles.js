@@ -23,7 +23,8 @@ Program.Particles = function(gl) {
 	attributes: attributes,
 	uniforms: uniforms
     });	
-}
+};
+    
 // create an object
 Program.Particles.prototype = Object.create(Program.prototype);
 
@@ -33,4 +34,4 @@ Program.Particles.prototype._get = function(url) {
 	xhr.open("get", url + "?" + Math.random(), false);
 	xhr.send();
 	return xhr.responseText;
-}
+};

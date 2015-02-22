@@ -23,7 +23,8 @@ Program.background = function(gl) {
 	attributes: attributes,
 	uniforms: uniforms
     });	
-}
+};
+
 // create an object
 Program.background.prototype = Object.create(Program.prototype);
 
@@ -33,4 +34,4 @@ Program.background.prototype.get = function(url) {
     xhr.open("get", url + "?" + Math.random(), false);
     xhr.send();
     return xhr.responseText;
-}
+};

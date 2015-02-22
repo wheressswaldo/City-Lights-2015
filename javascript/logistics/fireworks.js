@@ -22,7 +22,7 @@ var Fireworks = function(gl, force, delta) {
     force = force || 0.5;
     force = 0.1 + force + 0.3*Math.random();
     
-    // set lifetime and initialize position
+    // set lifetime according to delta
     if (delta > 10 && delta <50){
         this.lifetime = delta * 30;
     }
@@ -32,14 +32,15 @@ var Fireworks = function(gl, force, delta) {
     if (delta > 100){
         this.lifetime = delta * 15;
     }
+    // set position
     this.position = mat4.create();
     
     // location
     var center = vec3.create();
-    center[0] = 10 * (Math.random()-0.5);
-    // slight adjustment to y so it doesn't spawn on a building
+    center[0] = 20 * (Math.random()-0.5);
+    // slight adjustment to y so it doesn't spawn on a building (still does sometimes....)
     center[1] = 10 * (Math.random()-0.2);
-    center[2] = 10 * (Math.random()-0.5);
+    center[2] = 15 * (Math.random()-0.5);
 
     mat4.translate(this.position, this.position, center);
     mat4.rotateX(this.position, this.position, Math.random()*Math.PI);
@@ -90,7 +91,7 @@ var Fireworks = function(gl, force, delta) {
             this.buildSet("circle", force*1.2, delta);
 	break;
     }
-}
+};
 
 // builds a particle system
 Fireworks.prototype.buildSet = function(type, force, amount) {
@@ -125,7 +126,7 @@ Fireworks.prototype.buildSet = function(type, force, amount) {
     }
     // push to the list of systems
     this.particleSystems.push(new Particles(this.gl, type, force, color, amount));
-}
+};
 
 // draw the firework particles
 Fireworks.prototype.render = function(program, now, vMatrix) {
@@ -157,4 +158,4 @@ Fireworks.prototype.render = function(program, now, vMatrix) {
     });
     
     return true;
-}
+};

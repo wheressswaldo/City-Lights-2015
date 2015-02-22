@@ -17,10 +17,10 @@ var Particles = function(gl, type, force, color, amount) {
     this.gl = gl;
     this.buffers = {
 	velocity: gl.createBuffer()
-    }
+    };
     this.color = color;
     this.build(type, force, amount);
-}
+};
 
 // prototype function to empty the buffers
 Particles.prototype.destroy = function() {
@@ -28,7 +28,7 @@ Particles.prototype.destroy = function() {
 	this.gl.deleteBuffer(this.buffers[p]);
     }
     this.buffers = {};
-}
+};
 
 // prototype function to create particles according to type
 Particles.prototype.build = function(type, force, amount) {
@@ -36,7 +36,7 @@ Particles.prototype.build = function(type, force, amount) {
     var buffers = this.buffers;
     // set count according to sphere
     //this.count = Math.round((type == "sphere" ? 1000 : 200) * (amount || 1));
-    console.log(amount);
+    //console.log(amount);
     if (amount > 10 && amount <50){
         this.count = amount * 2;
     }
@@ -47,7 +47,7 @@ Particles.prototype.build = function(type, force, amount) {
         this.count = amount * 10;
     }
     
-    if (type == "circle"){
+    if (type === "circle"){
         this.count = Math.round(this.count * 0.75);
     }
     
@@ -58,7 +58,7 @@ Particles.prototype.build = function(type, force, amount) {
     // random vels
     for (var i=0; i < this.count; i++) {
     	var diff = 1 + (Math.random()-0.5)*0.05;
-	if (type == "sphere") {
+	if (type === "sphere") {
             vec3.random(tmp3, force + diff);
 	}
         else {
@@ -72,7 +72,7 @@ Particles.prototype.build = function(type, force, amount) {
     // bind buffers
     gl.bindBuffer(gl.ARRAY_BUFFER, buffers.velocity);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(velocity), gl.STATIC_DRAW);
-}
+};
 
 // draw the particles
 Particles.prototype.render = function(program) {
@@ -87,5 +87,5 @@ Particles.prototype.render = function(program) {
     gl.vertexAttribPointer(a.aVelocity, 3, gl.FLOAT, false, 0, 0);
 
     gl.drawArrays(gl.POINTS, 0, this.count);
-}
+};
 

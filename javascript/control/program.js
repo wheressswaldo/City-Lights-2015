@@ -47,7 +47,7 @@ var Program = function(gl, helper){
     (helper.uniforms || []).forEach(function(name) {
     this.uniforms[name] = gl.getUniformLocation(this.program, name);
         }, this);
-}
+};
 
 // prototype function to get shader info from string
 Program.prototype.shaderFromString = function(type, str) {
@@ -66,7 +66,7 @@ Program.prototype.shaderFromString = function(type, str) {
         
     // give back the shader if everything went properly
     return shader;
-}
+};
 
 // protype function to get shader info from shader id
 Program.prototype.shaderFromId = function(id) {
@@ -88,17 +88,17 @@ Program.prototype.shaderFromId = function(id) {
     // while theres a child to the node, check if its text, and add it to the empty string
     // repeat until you run out of children
     while (child) {
-	if (child.nodeType == child.TEXT_NODE) { src += child.textContent; }
+	if (child.nodeType === child.TEXT_NODE) { src += child.textContent; }
 	child = child.nextSibling;
     }
 
     // somewhat hardcoding...
     // check if the shader is a fragment shader
-    if (node.type == "x-shader/x-fragment") {
+    if (node.type === "x-shader/x-fragment") {
 	var type = gl.FRAGMENT_SHADER;
     } 
     // check if the shader is a vertex shader
-    else if (node.type == "x-shader/x-vertex") {
+    else if (node.type === "x-shader/x-vertex") {
 	var type = gl.VERTEX_SHADER;
     } 
     // this shouldn't happen... but throw an error if you managed to pass in ?garbage?
@@ -108,7 +108,7 @@ Program.prototype.shaderFromId = function(id) {
 
     // grab shader from string if everything went well
     return this._shaderFromString(type, src);
-}
+};
 
 // use the program and get vertex attributes
 Program.prototype.use = function() {
@@ -117,4 +117,4 @@ Program.prototype.use = function() {
     for (var p in this.attributes) { 
         this.gl.enableVertexAttribArray(this.attributes[p]);
     }
-}
+};

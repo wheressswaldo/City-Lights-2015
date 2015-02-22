@@ -241,9 +241,11 @@ var MusicPlayer = {
             this.last.ts = now;
             var force = delta / 50;
             Render.scene.push(new Fireworks(Render.gl, force, delta));
-            if (force > 3) { Render.scene.push(new Fireworks(Render.gl, 1)); }
+            if (force > 3) { 
+                Render.scene.push(new Fireworks(Render.gl, 1, delta)); 
+            }
         }
     }
-}
+};
 
 window.addEventListener("load", MusicPlayer);

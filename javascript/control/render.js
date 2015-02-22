@@ -42,7 +42,7 @@ var Render = {
         this.node = document.createElement("canvas");
 	var o = {
             alpha: false
-	}
+	};
 	
         // start new gl
         this.gl = this.node.getContext("webgl", o) || this.node.getContext("experimental-webgl", o);
@@ -84,7 +84,7 @@ var Render = {
 	this.node.height = h;
 	this.camera.syncPort(this.node);
 	this.gl.viewport(0, 0, w, h);
-	if (w != this.gl.drawingBufferWidth || h != this.gl.drawingBufferHeight) {
+	if (w !== this.gl.drawingBufferWidth || h !== this.gl.drawingBufferHeight) {
             alert("Your WebGL implementation seems to be having troubles with its drawing buffer size."); 
 	}
     },
@@ -108,8 +108,8 @@ var Render = {
               
         // enable blending
         gl.enable(gl.BLEND);
-	gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
-
+        gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+        
         // setup fireworks
         var program = this.programs.fireworks;
 	program.use();
@@ -123,15 +123,16 @@ var Render = {
 	this.scene = this.scene.filter(function(item) {
             return item.render(program, now, this.camera.vMatrix);
 	}, this);
+                
+        gl.disable(gl.BLEND);
         
         // setup background
 	var program2 = this.programs.background;
         program2.use();
         
-        // draw background
+        // draw background on top of fireworks
 	this.background.render(this.programs.background, this.node);
-                
-        gl.disable(gl.BLEND);
+        
     },
 
     update: function() {
@@ -139,5 +140,6 @@ var Render = {
 	this.render();
     }
 
-}
+};
+
 window.addEventListener("load", Render);
