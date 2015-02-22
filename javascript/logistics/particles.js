@@ -51,6 +51,10 @@ Particles.prototype.build = function(type, force, amount) {
         this.count = Math.round(this.count * 0.65);
     }
     
+    if (document.querySelector("#tracker").value !== 0){
+        this.count *= 2;
+    }
+    
     var tmp3 = vec3.create();
     var tmp2 = vec2.create();
     var velocity = [];
