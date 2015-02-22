@@ -39,7 +39,7 @@ var MusicPlayer = {
         {name:"Jay-Z &ndash; Empire State of Mind", file:"6.mp3"},
         {name:"2NE1 &ndash; I Am The Best", file:"7.mp3"},
         {name:"Avicii &ndash; Levels", file:"8.mp3"},
-	{name:"Taylor Swift &ndash; Blank Space", file:"9.mp3"},
+	{name:"Taylor Swift &ndash; Blank Space", file:"9.mp3"}, 
         {name:"Capital Cities &ndash; Safe and Sound", file:"10.mp3"},
         {name:"Elephante &ndash; Shake The Earth", file:"11.mp3"},
     ],

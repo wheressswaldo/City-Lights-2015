@@ -8,7 +8,7 @@ uniform int uStartTime;
 uniform int uCurrentTime;
 uniform float uLifetime;
 
-varying vec3 vColor;
+varying vec3 vColor; 
 varying float vLifetime;
 
 void main(void) {

@@ -91,6 +91,6 @@ Background.prototype.render = function(program, canvas) {
     // Draw the rectangle.
     gl.drawArrays(gl.TRIANGLES, 0, 6);
     
-    
+     
     
 };

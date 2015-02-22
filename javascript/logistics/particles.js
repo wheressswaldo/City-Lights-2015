@@ -38,7 +38,7 @@ Particles.prototype.build = function(type, force, amount) {
     //this.count = Math.round((type == "sphere" ? 1000 : 200) * (amount || 1));
     //console.log(amount);
     if (amount > 10 && amount <50){
-        this.count = 150;
+        this.count = 150; 
     }
     if (amount > 50 && amount < 100){
         this.count = 350;

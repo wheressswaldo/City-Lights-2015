@@ -127,7 +127,7 @@ var Render = {
         gl.disable(gl.BLEND);
         
         // setup background
-	var program2 = this.programs.background;
+	var program2 = this.programs.background; 
         program2.use();
         
         // draw background on top of fireworks

@@ -11,6 +11,6 @@ void main(void) {
     float alpha = 1.0-dist;
     alpha = pow(alpha, 3.0);
     alpha = alpha * vLifetime;
-
+ 
     gl_FragColor = vec4(vColor, alpha);
 }

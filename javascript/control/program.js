@@ -117,4 +117,4 @@ Program.prototype.use = function() {
     for (var p in this.attributes) { 
         this.gl.enableVertexAttribArray(this.attributes[p]);
     }
-};
+}; 

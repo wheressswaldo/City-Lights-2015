@@ -68,5 +68,5 @@ Camera.prototype.syncPort = function(node) {
     // set up according to node
     this.configure({aspect: node.width/node.height});
     return this;
-};
+}; 
 

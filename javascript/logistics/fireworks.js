@@ -36,7 +36,7 @@ var Fireworks = function(gl, force, delta) {
         this.lifetime = 1300;
     }
     if (delta > 100){
-        this.lifetime = 1800;
+        this.lifetime = 1800; 
     }
     // set position
     this.position = mat4.create();

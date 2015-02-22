@@ -20,7 +20,7 @@ Program.Particles = function(gl) {
     Program.call(this, gl, {
         vs: vs,
 	fs: fs,
-	attributes: attributes,
+	attributes: attributes, 
 	uniforms: uniforms
     });	
 };

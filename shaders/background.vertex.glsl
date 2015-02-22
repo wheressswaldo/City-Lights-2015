@@ -19,5 +19,5 @@ void main() {
 
    // pass the texCoord to the fragment shader
    // The GPU will interpolate this value between points.
-   vTexCoord = aTexCoord;
+   vTexCoord = aTexCoord; 
 }
