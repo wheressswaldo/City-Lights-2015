@@ -23,8 +23,18 @@ var Background = function(gl) {
 
 // prototype function to load an image
 Background.prototype.load = function() {
+    this.special = false;
     this.image = new Image();
     this.image.src = "images/city.png";
+};
+
+Background.prototype.change = function(){
+    if (this.special){
+        this.image.src = "images/city3.png";
+    }
+    else{
+        this.image.src = "images/city.png";
+    }
 };
 
 // prototype function to draw the background

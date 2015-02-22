@@ -105,30 +105,39 @@ Fireworks.prototype.buildSet = function(type, force, amount) {
     var r = Math.random();
     
     // choose between blue, red, or green; default should never happen
-    switch (true) {
-	case (r > 0.7):
-            color[0] = 1.0;
-            color[1] = 0.0;
-            color[2] = 0.0;
-	break;
-		
-	case (r > 0.4):
-            color[0] = 0.0;
-            color[1] = 1.0;
-            color[2] = 0.0;
-	break;
-		
-	case (r > 0):
-            color[0] = 0.0;
-            color[1] = 0.0;
-            color[2] = 1.0;
-	break;
+    if (document.querySelector("#tracker").value === 0) {
+        var r = Math.random();
 
-	default:
-            color[0] = 1.0;
-            color[1] = 1.0;
-            color[2] = 1.0;
-	break;
+        switch (true) {
+            case (r > 0.7):
+                color[0] = 1.0;
+                color[1] = 0.0;
+                color[2] = 0.0;
+                break;
+
+            case (r > 0.4):
+                color[0] = 0.0;
+                color[1] = 1.0;
+                color[2] = 0.0;
+                break;
+
+            case (r > 0):
+                color[0] = 0.0;
+                color[1] = 0.0;
+                color[2] = 1.0;
+                break;
+
+            default:
+                color[0] = 1.0;
+                color[1] = 1.0;
+                color[2] = 1.0;
+                break;
+        }
+    }
+    else {
+        color[0] = 0.4 + 0.6 * Math.random();
+        color[1] = 0.3 + 0.6 * Math.random();
+        color[2] = 0.2 + 0.6 * Math.random();
     }
     // push to the list of systems
     this.particleSystems.push(new Particles(this.gl, type, force, color, amount));

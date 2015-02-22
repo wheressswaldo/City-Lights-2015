@@ -16,6 +16,7 @@ var Render = {
     scene: [],
     gl: null,
     background: null,
+    special: false,
     node: null,
     programs: {},
     gravity: vec3.fromValues(0, -1e-7, 0),
@@ -33,6 +34,23 @@ var Render = {
             case "resize":
                 this.sync();
             break;
+            
+            case "click":
+                special = !special;
+                this.background.special = !this.background.special;
+                this.background.change();
+                
+                if (document.querySelector("#tracker").value === 0){
+                    document.querySelector("#tracker").value = 1;
+                    document.querySelector("#song").style.color = "black";
+                    document.body.style.backgroundColor = "black";
+                }
+                else{
+                    document.querySelector("#tracker").value = 0;
+                    document.querySelector("#song").style.color = "white";
+                    document.body.style.backgroundColor = "white";
+                }
+            break;
 	}
     },
     
@@ -48,7 +66,7 @@ var Render = {
         this.gl = this.node.getContext("webgl", o) || this.node.getContext("experimental-webgl", o);
 	// catching error
         if (!this.gl) {
-            alert("Get a modern browser dude, you don't support Web GlWhat are you using, Internet Explorer 6?");
+            alert("You don't seem to support WebGL. What are you using, Internet Explorer 6?");
             return;
         }
 
@@ -64,9 +82,13 @@ var Render = {
         this.camera = new Camera();
         // setup new background
         this.background = new Background(gl);
+        // set value
+        this.special = false;
+        document.querySelector("#tracker").value = 0;
 
         // check for resize
 	window.addEventListener("resize", this);
+        document.querySelector("#special").addEventListener("click", this);
 	
         // synchronize
         this.sync();
@@ -103,7 +125,12 @@ var Render = {
 	this.camera.lookAt(this.eye, this.center, this.up);
         
         // clear color
-        gl.clearColor(1.0, 1.0, 1.0, 1.0);
+        if (!special){
+            gl.clearColor(0.0, 0.0, 0.0, 1.0);
+        }
+        else{
+            gl.clearColor(1.0, 1.0, 1.0, 1.0);
+        }
         gl.clear(gl.COLOR_BUFFER_BIT);
               
         // enable blending
