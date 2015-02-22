@@ -36,6 +36,7 @@ var MusicPlayer = {
 	{name:"Mark Ronson &ndash; Uptown Funk", file:"3.mp3"},
 	{name:"Beyonce &ndash; Halo", file:"4.mp3"},
 	{name:"Caravan Palace &ndash; Rock It For Me", file:"5.ogg"},
+        {name:"Jay-Z &ndash; Empire State of Mind", file:"6.mp3"},
     ],
     
     // event handlers for when a buttons are pressed etc.
