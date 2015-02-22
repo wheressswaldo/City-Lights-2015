@@ -130,7 +130,7 @@ var MusicPlayer = {
 
         // updates used for time management and synchro
         this.update = this.update.bind(this);
-	setInterval(this.update, 20);
+	setInterval(this.update, 30);
     },
 
     // setupEvents basically adds event listeners to all the interactive components
